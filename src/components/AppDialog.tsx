@@ -5,7 +5,7 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogTitle from "@mui/material/DialogTitle";
 import { Box } from "@mui/system";
 import CloseIcon from "@mui/icons-material/Close";
-import { IconButton } from "@mui/material";
+import { IconButton, Typography } from "@mui/material";
 import { CSSProperties } from "@mui/styled-engine";
 
 interface AppDialogProps {
@@ -37,7 +37,9 @@ const AppDialog: React.FC<AppDialogProps & DialogProps> = ({
   return (
     <Dialog open={open} onClose={handleClose()} {...rest}>
       <Box sx={headerStyles.header}>
-        <DialogTitle>{title}</DialogTitle>
+        <DialogTitle>
+          <Typography variant="h4">{title}</Typography>
+        </DialogTitle>
         <IconButton onClick={handleClose()}>
           <CloseIcon />
         </IconButton>
